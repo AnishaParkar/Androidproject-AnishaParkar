@@ -40,8 +40,7 @@ class Splash : AppCompatActivity() {
                         }
 
                         splash_login.onClick {
-                            startActivity<PhoneNumber>()
-                            //startActivity<Login>()
+                            startActivity<Login>()
                             //finish()
                         }
                     }

@@ -1,35 +1,27 @@
 package edu.newhaven.android.mytableapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.startActivity
 
-
-class Login : AppCompatActivity() {
+class Login : GenericMethods() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        GenericMethods.setFullScreen(window)
 
-        Login_button.setOnClickListener {
+        login_submit.onClick {
+            val email = login_email.text.toString()
+            val password = login_password.text.toString()
+            val status = checkEmail(email, password)
+            if(status == "Checked") {
 
-            val emailL = email_address_login.text.toString()
-            val passwordL = Password_login.text.toString()
-
-
-            Log.d("Login", "email is" + emailL)
-            Log.d("Login", "password is: $passwordL")
+            } else longToast(status)
         }
 
-        Not_user.onClick {
-            //startActivity<SignUp>()
-            finish()
+        login_google.onClick {
 
         }
-
     }
 }
