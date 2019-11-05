@@ -33,13 +33,13 @@ class Splash : AppCompatActivity() {
                         longToast("Please Grant All Permissions")
                         finish()
                     } else {
-                        signup.onClick {
+                        splash_signup.onClick {
                             startActivity<Home>()
                             //startActivity<SignUp>()
                             //finish()
                         }
 
-                        login.onClick {
+                        splash_login.onClick {
                             startActivity<PhoneNumber>()
                             //startActivity<Login>()
                             //finish()
