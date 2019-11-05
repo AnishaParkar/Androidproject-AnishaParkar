@@ -34,13 +34,15 @@ class Splash : AppCompatActivity() {
                         finish()
                     } else {
                         signup.onClick {
-                            startActivity<PhoneNumber>()
-                            finish()
+                            startActivity<Home>()
+                            //startActivity<SignUp>()
+                            //finish()
                         }
 
                         login.onClick {
                             startActivity<PhoneNumber>()
-                            finish()
+                            //startActivity<Login>()
+                            //finish()
                         }
                     }
                 }

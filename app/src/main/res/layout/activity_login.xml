@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center_horizontal"
+android:orientation="vertical"
+tools:context="edu.newhaven.android.mytableapp.Login"
+android:background="@color/colorPrimary">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+    android:padding="15dp">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_chevron_left"
+        android:layout_gravity="start"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_person_with_padding"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        tools:fontFamily="@font/libre_baskerville_bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Enter your Login Details"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:fontFamily="@font/caudex"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+
+    <EditText
+        android:id="@+id/email_address_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:hint="Email Address"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColorHint="@color/white"/>
+
+    <EditText
+        android:id="@+id/Password_login"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginLeft="15dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/caudex"
+        android:hint="password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
+
+    <TextView
+        android:id="@+id/Not_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not an user,please signup here"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:fontFamily="@font/caudex"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+
+</LinearLayout>
+
+<Button
+    android:id="@+id/Login_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:text="Login"
+    android:textColor="@color/colorPrimary"
+    android:background="@color/white"/>
+
+
+
+</LinearLayout>
+
+

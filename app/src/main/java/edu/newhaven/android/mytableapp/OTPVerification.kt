@@ -9,7 +9,9 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+
 import kotlinx.android.synthetic.main.activity_otp_verification.*
+
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import java.util.concurrent.TimeUnit
@@ -115,7 +117,7 @@ class OTPVertification : AppCompatActivity() {
                     
                     FirebaseAuth.getInstance().signInWithCredential(p0).addOnCompleteListener { task ->
                         if(task.isSuccessful)
-                            startActivity<Home>()
+                            startActivity<SignUp>()
                     }
                 }
 
@@ -127,6 +129,10 @@ class OTPVertification : AppCompatActivity() {
                     Log.d("code sent", p0)
                 }
             })
+        code_submit.onClick{
+            startActivity<SignUp>()
+        }
+
     }
 }
 
