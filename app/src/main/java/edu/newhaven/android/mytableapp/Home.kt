@@ -1,48 +1,29 @@
 package edu.newhaven.android.mytableapp
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ListView
-import android.widget.TextView
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_home.*
 
-class Home : AppCompatActivity() {
-
-    lateinit var ref: DatabaseReference
-    lateinit var restaurantlist: MutableList<Restaurantmodel>
-    lateinit var listView: ListView
+class Home : GenericMethods() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(this@Home, R.layout.activity_home)
 
-        GenericMethods.setFullScreen(window)
-
-        listView = findViewById<ListView>(R.id.home_listview)
-
-        restaurantlist = mutableListOf()
-        ref = FirebaseDatabase.getInstance().getReference("Restaurant")
+        val ref = database.getReference("Restaurant")
 
         ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                if (p0!!.exists()) {
-
-                    for (h in p0.children) {
-                        val restaurant = h.getValue(Restaurantmodel::class.java)
-                        restaurantlist.add(restaurant!!)
-                    }
-
-                    val adapter = HomeAdapter(applicationContext, R.layout.row_home, restaurantlist)
-                    listView.adapter = adapter
+                for(data in p0.children) {
+                    home_address.text = "Address : ${data.child("Address").value}"
+                    home_category.text = "Category : ${data.child("Category").value}"
+                    home_costForTwo.text = "Cost For Two : ${data.child("Cost_for_two").value}"
+                    home_phone.text = "Phone Number : ${data.child("Phone Number").value}"
                 }
             }
         })
