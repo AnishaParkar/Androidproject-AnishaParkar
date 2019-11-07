@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
-                android:text="Your Personal Server"
+                android:text="Your Personal Waiter"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
 
@@ -155,7 +155,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </RelativeLayout>
 

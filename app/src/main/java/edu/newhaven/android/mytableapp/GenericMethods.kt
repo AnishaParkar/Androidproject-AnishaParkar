@@ -1,19 +1,30 @@
 package edu.newhaven.android.mytableapp
 
 import android.app.Activity
+import android.content.Context
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import org.jetbrains.anko.AnkoLogger
+import com.google.firebase.database.FirebaseDatabase
+import com.kaopiz.kprogresshud.KProgressHUD
+import org.jetbrains.anko.*
+
 
 open class GenericMethods: AppCompatActivity(), AnkoLogger{
 
     companion object {
 
-        val auth: FirebaseAuth = FirebaseAuth.getInstance()
+        lateinit var auth: FirebaseAuth
+        lateinit var database: FirebaseDatabase
+        lateinit var pd:KProgressHUD
+
 
         //Setting the screen to fullscreen
         fun setFullScreen(window: Window) = window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -37,8 +48,15 @@ open class GenericMethods: AppCompatActivity(), AnkoLogger{
             else
                 "Checked"
         }
+        fun setProgressDialog(context: Context):KProgressHUD {
+            return KProgressHUD.create(context).setStyle(KProgressHUD.Style.SPIN_INDETERMINATE).setCancellable(false).setAnimationSpeed(2).setDimAmount(0.5f).setBackgroundColor(R.color.colorPrimaryDark)
+        }
 
-//        fun googth
+        fun startHomeActivity(activity: Activity) {
+            activity.startActivity(activity.intentFor<Home>().newTask().clearTask())
+            activity.finish()
+        }
+
     }
 }
 
