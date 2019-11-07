@@ -1,75 +1,79 @@
 package edu.newhaven.android.mytableapp
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import org.jetbrains.anko.info
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.startActivity
 
-class SignUp : AppCompatActivity() {
+class SignUp : GenericMethods() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        setContentView(this@SignUp, R.layout.activity_sign_up)
 
+        signup_back_button.onClick { finish() }
 
-        GenericMethods.setFullScreen(window)
+        val email = intent.getStringExtra("email")!!
+        val name = intent.getStringExtra("name")!!
+        val type = intent.getStringExtra("type")!!
+        val password = intent.getStringExtra("password")!!
 
-        profile_submit.setOnClickListener {
-            performRegister()
+        signup_email.text = email
+        signup_name.setText(name)
+
+        signup_submit.onClick {
+            pd.setLabel("Please Wait")
+            pd.show()
+            val name = signup_name.text.toString()
+            val phone = signup_phone.text.toString()
+
+            when {
+                name.isEmpty() -> longToast("Please enter your Name")
+                phone.isEmpty() -> longToast("Please enter your Phone Number")
+                phone.length != 10 -> longToast("Please enter valid Phone Number")
+                else -> {
+                    val db = database.getReference("Users")
+                    db.addListenerForSingleValueEvent(object: ValueEventListener {
+                        override fun onCancelled(p0: DatabaseError) {
+                            pd.dismiss()
+                        }
+
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            val pos = dataSnapshot.children.count()+1
+                            info(pos)
+                            val map = HashMap<String, String>()
+                            map["name"] = name
+                            map["phone"] = phone
+                            map["email"] = email
+                            db.child("User$pos").push()
+                            db.child("User$pos").setValue(map)
+                        }
+                    })
+
+                    if (type == "normallogin") {
+                        auth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(this@SignUp) { task ->
+                                if (task.isSuccessful) {
+                                    pd.dismiss()
+                                    longToast("User Registered Successfully")
+                                    startHomeActivity(this@SignUp)
+                                } else {
+                                    pd.dismiss()
+                                    longToast("Sign Up Failed - ${task.exception.toString()}")
+                                }
+                            }
+                    } else {
+                        pd.dismiss()
+                        startHomeActivity(this@SignUp)
+                    }
+                }
+            }
         }
-        already_user.onClick {
-            //startActivity<PhoneNumber>()
-            startActivity<Login>()
-
-        }
-
-    }
-
-    private fun performRegister() {
-        val name = first_name.text.toString()
-        val email = email_address.text.toString()
-        //val password = Password.text.toString()
-
-        if (email.isEmpty() ) {
-            Toast.makeText(this, "Please enter Email and Password", Toast.LENGTH_SHORT).show()
-            return
-        }
-        else {
-            startActivity<Home>()
-        }
-
-
-        Log.d("SignUp", "name is" + name)
-        Log.d("SignEmail", "Email is: " + email)
-        //Log.d("SignPassword", "Password is:  + $password")
-
-//        //Firebase Authentication to create user with email and password
-//        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email)
-//            .addOnCompleteListener {
-//                if (!it.isSuccessful) return@addOnCompleteListener
-//
-//                //else if successful
-//
-//                //saveUserDetailsToFirebase()
-//                Log.d("Main", "Successfully created user with uid: ${it?.result?.user?.uid} ")
-//
-//                startActivity<Login>()
-//            }
-//            .addOnFailureListener {
-//                Log.d("Main", "Failed to create user: ${it.message}")
-//                Toast.makeText(this, "Failed to create user: ${it.message}", Toast.LENGTH_SHORT)
-//                    .show()
-//
-//            }
     }
 
 
