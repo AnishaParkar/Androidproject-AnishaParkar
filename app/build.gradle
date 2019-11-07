@@ -52,8 +52,8 @@ dependencies {
     //Anko library
     implementation "org.jetbrains.anko:anko:$anko_version"
 
-    //Country Code Library
-    implementation 'com.hbb20:ccp:2.1.0'
+    //Progress Dialog Library
+    implementation 'com.kaopiz:kprogresshud:1.2.0'
 
     //Circle Image View library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
