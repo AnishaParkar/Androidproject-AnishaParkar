@@ -17,7 +17,7 @@ class Splash : GenericMethods() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(this@Splash, R.layout.activity_splash)
 
         Dexter.withActivity(this@Splash)
             .withPermissions(
@@ -33,19 +33,16 @@ class Splash : GenericMethods() {
                         longToast("Please Grant All Permissions")
                         finish()
                     } else {
+                        if(auth.currentUser != null) {
+                            startHomeActivity(this@Splash)
+                        }
 
-                            if(auth.currentUser != null) {
-                                startHomeActivity(this@Splash)
-                            }
                         splash_signup.onClick {
-                            startActivity<Home>()
-                            //startActivity<SignUp>()
-                            //finish()
+                            startActivity<Login>("text" to "Sign Up")
                         }
 
                         splash_login.onClick {
-                            startActivity<Login>()
-                            //finish()
+                            startActivity<Login>("text" to "Login")
                         }
                     }
                 }

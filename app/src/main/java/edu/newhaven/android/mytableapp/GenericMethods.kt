@@ -25,7 +25,13 @@ open class GenericMethods: AppCompatActivity(), AnkoLogger{
         lateinit var database: FirebaseDatabase
         lateinit var pd:KProgressHUD
 
-
+        fun setContentView(activity:Activity, layout:Int) {
+            activity.setContentView(layout)
+            setFullScreen(activity.window)
+            auth = FirebaseAuth.getInstance()
+            database = FirebaseDatabase.getInstance()
+            pd = setProgressDialog(activity)
+        }
         //Setting the screen to fullscreen
         fun setFullScreen(window: Window) = window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
@@ -36,7 +42,7 @@ open class GenericMethods: AppCompatActivity(), AnkoLogger{
                 activity.currentFocus!!.windowToken, 0)
         }
 
-        fun checkEmail(email:String, password:String):String {
+        fun checkEmailPassword(email:String, password:String):String {
             val emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
             return if (email == "" || password == "")
@@ -48,6 +54,7 @@ open class GenericMethods: AppCompatActivity(), AnkoLogger{
             else
                 "Checked"
         }
+
         fun setProgressDialog(context: Context):KProgressHUD {
             return KProgressHUD.create(context).setStyle(KProgressHUD.Style.SPIN_INDETERMINATE).setCancellable(false).setAnimationSpeed(2).setDimAmount(0.5f).setBackgroundColor(R.color.colorPrimaryDark)
         }
@@ -56,7 +63,6 @@ open class GenericMethods: AppCompatActivity(), AnkoLogger{
             activity.startActivity(activity.intentFor<Home>().newTask().clearTask())
             activity.finish()
         }
-
     }
 }
 
