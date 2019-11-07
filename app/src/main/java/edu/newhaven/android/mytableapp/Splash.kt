@@ -38,7 +38,7 @@ class Splash : GenericMethods() {
                         }
 
                         splash_signup.onClick {
-                            startActivity<Login>("text" to "Sign Up")
+                            startActivity<SignUp>("text" to "Sign Up")
                         }
 
                         splash_login.onClick {
