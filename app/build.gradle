@@ -61,5 +61,8 @@ dependencies {
     //Permission library
     implementation 'com.karumi:dexter:5.0.0'
 
+    //Google Admobs
+    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+
 }
 

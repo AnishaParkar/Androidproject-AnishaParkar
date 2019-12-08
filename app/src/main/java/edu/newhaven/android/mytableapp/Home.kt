@@ -5,6 +5,8 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds;
 
 class Home : GenericMethods() {
 
@@ -32,6 +34,9 @@ class Home : GenericMethods() {
                 }
             }
         })
+
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544/6300978111")
+        adView.loadAd(AdRequest.Builder().build())
 
     }
 }
