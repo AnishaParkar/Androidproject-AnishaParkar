@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context="edu.newhaven.android.mytableappv1.Home">
-
         <RelativeLayout
             android:id="@+id/restaurant_top_card"
             android:layout_width="match_parent"
@@ -20,7 +19,7 @@
                     android:layout_height="200dp"
                     android:alpha="1.0"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/food_1" />
+                    android:src="@drawable/menu2" />
 
                 <View
                     android:layout_width="match_parent"
@@ -33,48 +32,76 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="120dp"
-                    android:textColor="@android:color/white"
+                    android:layout_marginTop="145dp"
                     android:textStyle="bold"
-                    android:text="Some Restaurant" />
+                    android:text="Olive Garden"
+                    android:fontFamily="@font/libre_baskerville_bold"
+                    android:textColor="@color/colorAccent"/>
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
                 <TextView
                     android:id="@+id/home_address"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:text="Address"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:background="@color/transparentlightestorange"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/caudex"/>
 
                 <TextView
                     android:id="@+id/home_category"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:text="Category"
+                    android:background="@color/colorPrimaryLight"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/caudex" />
 
                 <TextView
                     android:id="@+id/home_costForTwo"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:text="Cost for two"
+                    android:background="@color/transparentlightestorange"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/caudex"/>
 
                 <TextView
                     android:id="@+id/home_phone"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Phone Number"
+                    android:background="@color/colorPrimaryLight"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/caudex"/>
+
+                <!--        <com.google.android.material.textfield.TextInputLayout-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--            app:boxStrokeColor="@color/colorPrimary"-->
+                <!--            app:boxCornerRadiusTopEnd="@dimen/cardview_default_radius"-->
+                <!--            app:boxBackgroundColor="@color/colorPrimaryLight">-->
+
+                <!--            <com.google.android.material.textfield.TextInputEditText-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="30dp"-->
+                <!--                android:text="Address"-->
+                <!--                android:textColor="@android:color/black"-->
+                <!--                android:textStyle="bold"-->
+                <!--            />-->
+
+                <!--        </com.google.android.material.textfield.TextInputLayout>-->
 
 
         </LinearLayout>
@@ -91,46 +118,48 @@
 
         <TextView
             android:id="@+id/category_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:text="Menu"
             android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/caudex"
+            android:layout_marginTop="10dp"
+            />
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:orientation="horizontal">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/imageButton"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/food_1"
+                    android:src="@drawable/menu1"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginRight="2.5dp"/>
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/imageButton2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/food_1"
+                    android:src="@drawable/menu3"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="2.5dp"
                     android:layout_marginRight="2.5dp"/>
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/imageButton3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/food_1"
+                    android:src="@drawable/menu4"
                     android:layout_marginLeft="2.5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
@@ -152,11 +181,11 @@
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             ads:adSize="SMART_BANNER"
             ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
-
 </LinearLayout>
+
