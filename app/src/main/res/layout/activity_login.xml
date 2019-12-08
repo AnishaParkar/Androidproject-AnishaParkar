@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:scrollbars="none"
-    tools:context="edu.newhaven.android.mytableapp.Login">
+    tools:context="edu.newhaven.android.mytableappv1.Login">
 
     <ImageView
         android:layout_width="match_parent"

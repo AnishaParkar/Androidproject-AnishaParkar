@@ -9,7 +9,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "edu.newhaven.android.mytableapp"
+        applicationId "edu.newhaven.android.mytableappv1"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1

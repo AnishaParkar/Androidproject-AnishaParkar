@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="edu.newhaven.android.mytableapp.Home">
+    tools:context="edu.newhaven.android.mytableappv1.Home">
 
         <RelativeLayout
             android:id="@+id/restaurant_top_card"
@@ -135,6 +135,19 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginRight="5dp" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/order_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Order Food"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="20dp"/>
+
 
 
 

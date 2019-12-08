@@ -12,4 +12,5 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="transparentlightestorange">#44cc7722</color>
     <color name="lightorange">#FF9F53</color>
+    <color name="greySecondary">#8B000000</color>
 </resources>

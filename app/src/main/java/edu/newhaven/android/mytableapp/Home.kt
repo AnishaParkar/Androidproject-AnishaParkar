@@ -1,9 +1,10 @@
-package edu.newhaven.android.mytableapp
-
+package edu.newhaven.android.mytableappv1
 
 import android.os.Bundle
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class Home : GenericMethods() {
 
@@ -11,6 +12,10 @@ class Home : GenericMethods() {
         super.onCreate(savedInstanceState)
         setContentView(this@Home, R.layout.activity_home)
 
+        order_food.onClick {
+            startActivity<Menu>()
+//            startActivity<DecoderActivity>()
+        }
         val ref = database.getReference("Restaurant")
 
         ref.addValueEventListener(object : ValueEventListener {
@@ -27,5 +32,6 @@ class Home : GenericMethods() {
                 }
             }
         })
+
     }
 }

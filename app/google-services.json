@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "156724086533",
-    "firebase_url": "https://mytable-8b508.firebaseio.com",
-    "project_id": "mytable-8b508",
-    "storage_bucket": "mytable-8b508.appspot.com"
+    "project_number": "655172341960",
+    "firebase_url": "https://my-table-bec17.firebaseio.com",
+    "project_id": "my-table-bec17",
+    "storage_bucket": "my-table-bec17.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:156724086533:android:f22c79c879470db751996c",
+        "mobilesdk_app_id": "1:655172341960:android:7e5df03edcb30d667515fd",
         "android_client_info": {
           "package_name": "edu.newhaven.android.mytableapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "156724086533-v15n82ia4vv3kh69p174tce8mr65uvce.apps.googleusercontent.com",
+          "client_id": "655172341960-c3cg5k165oqci6inq10uh5232imdplga.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "edu.newhaven.android.mytableapp",
@@ -23,28 +23,49 @@
           }
         },
         {
-          "client_id": "156724086533-itl0k6t2s0cl8h6h1vusscp1ccm45oap.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "edu.newhaven.android.mytableapp",
-            "certificate_hash": "103d7c80ec3c69f23a28ce2adf8b0a530b08e33b"
-          }
-        },
-        {
-          "client_id": "156724086533-kgkvt00kaca3ru8eft6q9qgn99cvrk0m.apps.googleusercontent.com",
+          "client_id": "655172341960-64euep8632ga7734pusfvl79ad4jo51d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAUL6rAMSWoXquZXMjXT0GZd5JWpOFOJKk"
+          "current_key": "AIzaSyAmZgXbHqve2tpTJv3PmgzYZ9UA82IDLPw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "156724086533-kgkvt00kaca3ru8eft6q9qgn99cvrk0m.apps.googleusercontent.com",
+              "client_id": "655172341960-64euep8632ga7734pusfvl79ad4jo51d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655172341960:android:38c35700437463247515fd",
+        "android_client_info": {
+          "package_name": "edu.newhaven.android.mytableappv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655172341960-64euep8632ga7734pusfvl79ad4jo51d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmZgXbHqve2tpTJv3PmgzYZ9UA82IDLPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655172341960-64euep8632ga7734pusfvl79ad4jo51d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

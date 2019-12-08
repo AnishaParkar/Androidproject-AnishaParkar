@@ -1,4 +1,4 @@
-package edu.newhaven.android.mytableapp
+package edu.newhaven.android.mytableappv1
 
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
@@ -38,7 +38,7 @@ class Splash : GenericMethods() {
                         }
 
                         splash_signup.onClick {
-                            startActivity<SignUp>("text" to "Sign Up")
+                            startActivity<Home>("text" to "Sign Up")
                         }
 
                         splash_login.onClick {

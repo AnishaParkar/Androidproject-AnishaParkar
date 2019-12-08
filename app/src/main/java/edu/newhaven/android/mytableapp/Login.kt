@@ -1,4 +1,4 @@
-package edu.newhaven.android.mytableapp
+package edu.newhaven.android.mytableappv1
 
 import android.app.Activity
 import android.content.Intent
