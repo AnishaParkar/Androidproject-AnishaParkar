@@ -63,6 +63,7 @@ dependencies {
 
     //Google Admobs
     implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
 }
 

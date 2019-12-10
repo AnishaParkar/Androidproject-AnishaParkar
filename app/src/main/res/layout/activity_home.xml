@@ -138,17 +138,22 @@
                     android:layout_marginRight="5dp" />
         </LinearLayout>
 
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/maps">
+        </fragment>
+
         <Button
             android:id="@+id/order_food"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:background="@color/colorPrimary"
             android:text="Order Food"
             android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_gravity="center"/>
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
