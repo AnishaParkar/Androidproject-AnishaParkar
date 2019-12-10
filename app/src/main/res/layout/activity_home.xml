@@ -38,66 +38,172 @@
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:textColor="@color/colorAccent"/>
         </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            >
+            android:background="@color/transparentlightestorange">
 
-                <TextView
-                    android:id="@+id/home_address"
+                <!--Category        -->
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:text="Address"
-                    android:textColor="@android:color/black"
-                    android:background="@color/transparentlightestorange"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/caudex"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
 
-                <TextView
-                    android:id="@+id/home_category"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="25dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+
+                                <TextView
+                                    android:id="@+id/home_category"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/caudex"
+                                    android:text="Category"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/lightgrey" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/spoon_fork_orange"
+                            app:borderWidth="0dp"
+                            app:fabCustomSize="30dp"
+                            app:maxImageSize="20dp" />
+                </RelativeLayout>
+
+                <!--Cost for 2-->
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:text="Category"
-                    android:background="@color/colorPrimaryLight"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/caudex" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
 
-                <TextView
-                    android:id="@+id/home_costForTwo"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="25dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+
+                                <TextView
+                                    android:id="@+id/home_costForTwo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/caudex"
+                                    android:text="Cost for two"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/lightgrey" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_attach_money_orange"
+                            app:borderWidth="0dp"
+                            app:fabCustomSize="30dp"
+                            app:maxImageSize="20dp" />
+                </RelativeLayout>
+
+                <!-- phone number-->
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:text="Cost for two"
-                    android:background="@color/transparentlightestorange"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/caudex"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
 
-                <TextView
-                    android:id="@+id/home_phone"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="25dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+
+                                <TextView
+                                    android:id="@+id/home_phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/caudex"
+                                    android:text="Phone Number"
+                                    android:textStyle="bold"
+                                    android:scaleType="center"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/lightgrey" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_phone_orange"
+                            app:borderWidth="0dp"
+                            app:fabCustomSize="30dp"
+                            app:maxImageSize="20dp" />
+                </RelativeLayout>
+
+                <!--Address        -->
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Phone Number"
-                    android:background="@color/colorPrimaryLight"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/caudex"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
 
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="30dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+
+                                <TextView
+                                    android:id="@+id/home_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/caudex"
+                                    android:text="Address"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/lightgrey" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_home_orange"
+                            app:borderWidth="0dp"
+                            app:fabCustomSize="30dp"
+                            app:maxImageSize="20dp" />
+                </RelativeLayout>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/category_text"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Menu"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:fontFamily="@font/caudex"
-            android:layout_marginTop="10dp"
-            />
 
         <LinearLayout
             android:layout_width="fill_parent"
