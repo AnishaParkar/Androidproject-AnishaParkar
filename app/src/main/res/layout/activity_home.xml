@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context="edu.newhaven.android.mytableappv1.Home">
+
         <RelativeLayout
             android:id="@+id/restaurant_top_card"
             android:layout_width="match_parent"
@@ -16,14 +17,14 @@
                 <ImageView
                     android:id="@+id/restaurant_image"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="170dp"
                     android:alpha="1.0"
                     android:scaleType="centerCrop"
                     android:src="@drawable/menu2" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="175dp"
                     android:background="@drawable/gradient_up" />
 
                 <TextView
@@ -32,15 +33,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="145dp"
+                    android:layout_marginTop="125dp"
                     android:textStyle="bold"
                     android:text="Olive Garden"
                     android:fontFamily="@font/libre_baskerville_bold"
-                    android:textColor="@color/colorAccent"/>
+                    android:textColor="@color/white"/>
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="155dp"
             android:orientation="vertical"
             android:background="@color/transparentlightestorange">
 
@@ -207,8 +209,9 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
 
                 <ImageView
                     android:id="@+id/imageButton"
@@ -217,9 +220,9 @@
                     android:layout_weight="1"
                     android:src="@drawable/menu1"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="2.5dp"/>
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="0.5dp"/>
 
                 <ImageView
                     android:id="@+id/imageButton2"
@@ -227,10 +230,10 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:src="@drawable/menu3"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginLeft="2.5dp"
-                    android:layout_marginRight="2.5dp"/>
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="0.5dp"/>
 
                 <ImageView
                     android:id="@+id/imageButton3"
@@ -239,14 +242,15 @@
                     android:layout_weight="1"
                     android:src="@drawable/menu4"
                     android:layout_marginLeft="2.5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginBottom="0.5dp"/>
         </LinearLayout>
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_marginTop="5dp"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:id="@+id/maps">
         </fragment>
@@ -260,15 +264,19 @@
             android:text="Order Food"
             android:textColor="@color/white"
             android:layout_gravity="center"/>
+        <!--        android:paddingStart="10dp"-->
+        <!--        android:paddingEnd="10dp"-->
+
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
             ads:adSize="SMART_BANNER"
             ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
 
 </LinearLayout>
 
