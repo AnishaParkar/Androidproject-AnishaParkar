@@ -95,40 +95,13 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:id="@+id/Add_menu"
+                    android:text="Add"
+                    android:backgroundTint="@color/colorPrimary" />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/menu_add1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/ic_add_white_24px"
-                        app:civ_circle_background_color="@color/colorPrimary" />
-
-                    <TextView
-                        android:id="@+id/menu_number1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/menu_sub1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/ic_remove_black_24dp"
-                        app:civ_circle_background_color="@color/colorPrimary" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
