@@ -5,23 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.newhaven.android.mytableappv1.Menu">
+    tools:context="edu.newhaven.android.mytableapp.Order_Detail">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/order_info"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Order Details"/>
-
-    </LinearLayout>
+        android:id="@+id/total_amount"
+        android:layout_height="40dp"
+        android:hint="@string/total_price"
+        android:backgroundTint="@color/colorPrimary"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/menu_rv"
+        android:id="@+id/order_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

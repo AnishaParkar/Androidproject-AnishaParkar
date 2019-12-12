@@ -8,9 +8,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import edu.newhaven.android.mytableapp.Adapter.MenuAdapter
+import edu.newhaven.android.mytableapp.Order_Detail
 
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 
 class Menu : GenericMethods() {
@@ -50,6 +52,11 @@ class Menu : GenericMethods() {
                 tenderListRV.adapter = adapter
             }
         })
+
+        order_info.onClick {
+            startActivity<Order_Detail>()
+        }
+
     }
 }
 
