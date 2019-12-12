@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import edu.newhaven.android.mytableappv1.GenericMethods.Companion.database
 import edu.newhaven.android.mytableappv1.MenuModel
-import com.google.firebase.database.FirebaseDatabase
-import edu.newhaven.android.mytableappv1.Menu
 import edu.newhaven.android.mytableappv1.R
 
 class MenuAdapter(private val menulist: MutableList<MenuModel>, private val context: Context):RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
@@ -30,7 +30,7 @@ class MenuAdapter(private val menulist: MutableList<MenuModel>, private val cont
         holder.menu_cost.text = menu.Cost
         holder.menu_description.text = menu.Description
 
-        holder.add_menu.setOnClickListener { addtoCart(menu) }
+        holder.add_menu.setOnClickListener { addtoCart(menu.ItemName,menu.Cost) }
 
     }
 
@@ -55,25 +55,14 @@ class MenuAdapter(private val menulist: MutableList<MenuModel>, private val cont
         }
     }
 
-    private fun addtoCart(menu:MenuModel){
+    private fun addtoCart(ItemName: String, Cost: String){
 
-//        val db = GenericMethods.database.getReference("Orders")
-//        db.addListenerForSingleValueEvent(object: ValueEventListener {
-//            override fun onCancelled(p0: DatabaseError) {
-//                GenericMethods.pd.dismiss()
-//            }
-//
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                val pos = dataSnapshot.children.count()+1
-//                info(pos)
-//                val map = HashMap<String, String>()
-//                map["Itemname"] = menu.ItemName
-//                map["cost"] = menu.Cost
-//                db.child("Orders$pos").push()
-//                db.child("Orders$pos").setValue(map)
-//            }
-//        })
-
+        val db = database.getReference().child("Restaurant").child("Olive Garden").child("Order Cart")
+        val ordercart = db.push().key
+        val cart = MenuModel(ItemName = ItemName,Cost = Cost)
+        db.child(ordercart!!).setValue(cart).addOnCompleteListener {
+            Toast.makeText(context,"item saved successfully",Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
