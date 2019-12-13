@@ -20,7 +20,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name="edu.newhaven.android.mytableapp.Review" />
-        <activity android:name="edu.newhaven.android.mytableapp.Order_Detail" />
+
         <activity
             android:name=".Splash"
             android:allowBackup="true"
@@ -75,6 +75,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="edu.newhaven.android.mytableapp.AddReview" />
+        <activity android:name="edu.newhaven.android.mytableapp.Order_Detail" />
     </application>
 
 </manifest>

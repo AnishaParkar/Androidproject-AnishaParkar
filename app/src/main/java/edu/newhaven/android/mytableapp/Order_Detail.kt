@@ -6,6 +6,14 @@ import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -13,9 +21,14 @@ import edu.newhaven.android.mytableapp.Adapter.OrderAdapter
 import edu.newhaven.android.mytableapp.Model.OrderModel
 import edu.newhaven.android.mytableappv1.GenericMethods
 import edu.newhaven.android.mytableappv1.R
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_order__detail.*
+import kotlinx.android.synthetic.main.activity_order__detail.adView
 
-class Order_Detail: GenericMethods(){
+class Order_Detail: GenericMethods(), OnMapReadyCallback {
+
+    private lateinit var map: GoogleMap
+    private val REQUEST_LOCATION_PERMISSION = 1
 
     private var orderAdapt: OrderAdapter? = null
     private lateinit var recyclerView: RecyclerView
@@ -62,6 +75,20 @@ class Order_Detail: GenericMethods(){
             }
         })
 
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.maps) as? SupportMapFragment
+        mapFragment?.getMapAsync(this)
+
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544/6300978111")
+        adView.loadAd(AdRequest.Builder().build())
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        map = googleMap
+        val zoomLevel = 15f
+        val sydney = LatLng(41.258980, -73.011750)
+        map.addMarker(MarkerOptions().position(sydney).title("Olive Garden"))
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel))
     }
 }
 
