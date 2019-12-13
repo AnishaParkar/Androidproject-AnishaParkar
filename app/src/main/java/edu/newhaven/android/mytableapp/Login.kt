@@ -106,7 +106,7 @@ class Login : GenericMethods() {
                                     if (task.isSuccessful) {
                                         status = false
                                         pd.dismiss()
-                                        startHomeActivity(this@Login)
+//                                        startHomeActivity(this@Login)
                                     } else {
                                         status = false
                                         pd.dismiss()
@@ -116,7 +116,7 @@ class Login : GenericMethods() {
                         } else {
                             status = false
                             pd.dismiss()
-                            startHomeActivity(this@Login)
+//                            startHomeActivity(this@Login)
                         }
                     }
                 }

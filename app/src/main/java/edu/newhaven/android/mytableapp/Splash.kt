@@ -8,6 +8,8 @@ import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import edu.newhaven.android.mytableapp.Registration
+import edu.newhaven.android.mytableapp.SignIn
 import kotlinx.android.synthetic.main.activity_splash.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -33,16 +35,16 @@ class Splash : GenericMethods() {
                         longToast("Please Grant All Permissions")
                         finish()
                     } else {
-                        if(auth.currentUser != null) {
-                            startHomeActivity(this@Splash)
-                        }
+//                        if(auth.currentUser != null) {
+//                            startHomeActivity(this@Splash)
+//                        }
 
                         splash_signup.onClick {
-                            startActivity<Home>("text" to "Sign Up")
+                            startActivity<Registration>("text" to "Sign Up")
                         }
 
                         splash_login.onClick {
-                            startActivity<Login>("text" to "Login")
+                            startActivity<SignIn>("text" to "Login")
                         }
                     }
                 }

@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="edu.newhaven.android.mytableapp.Review"></activity>
+
+        <activity android:name="edu.newhaven.android.mytableapp.Review" />
         <activity android:name="edu.newhaven.android.mytableapp.Order_Detail" />
         <activity
             android:name=".Splash"
@@ -49,8 +50,17 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name="edu.newhaven.android.mytableapp.SignIn"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".SignUp"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="edu.newhaven.android.mytableapp.Registration"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -64,7 +74,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="edu.newhaven.android.mytableapp.AddReview"/>
+        <activity android:name="edu.newhaven.android.mytableapp.AddReview" />
     </application>
 
 </manifest>
