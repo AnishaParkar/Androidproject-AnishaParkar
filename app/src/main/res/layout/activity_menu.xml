@@ -12,11 +12,18 @@
         android:layout_height="wrap_content"
         >
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="40dp"
             android:id="@+id/order_info"
             android:backgroundTint="@color/colorPrimary"
             android:text="Order Details"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/add_review"
+            android:backgroundTint="@color/colorPrimary"
+            android:text=" View Review"/>
 
     </LinearLayout>
 

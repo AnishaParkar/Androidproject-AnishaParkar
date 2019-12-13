@@ -9,6 +9,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import edu.newhaven.android.mytableapp.Adapter.MenuAdapter
 import edu.newhaven.android.mytableapp.Order_Detail
+import edu.newhaven.android.mytableapp.Review
 
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -57,6 +58,9 @@ class Menu : GenericMethods() {
             startActivity<Order_Detail>()
         }
 
+        add_review.onClick {
+            startActivity<Review>()
+        }
     }
 }
 

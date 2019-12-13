@@ -4,7 +4,13 @@
     <string name="title_activity_otp__vertification">OTP_Vertification</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name = "total_price">Total Amount</string>
+    <string name="total_price">Total Amount</string>
+    <string name="divider_bullet">•</string>
+    <string name="filter_add_review">Add review</string>
+    <string name="hint_review">How was your experience?</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+
 
     <string name="title_activity_otpvertification">OTPVertification</string>
 </resources>
