@@ -2,6 +2,7 @@ package edu.newhaven.android.mytableapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,12 +13,14 @@ import edu.newhaven.android.mytableapp.Adapter.OrderAdapter
 import edu.newhaven.android.mytableapp.Model.OrderModel
 import edu.newhaven.android.mytableappv1.GenericMethods
 import edu.newhaven.android.mytableappv1.R
+import kotlinx.android.synthetic.main.activity_order__detail.*
 
 class Order_Detail: GenericMethods(){
 
     private var orderAdapt: OrderAdapter? = null
     private lateinit var recyclerView: RecyclerView
     var orderlist = mutableListOf<OrderModel>()
+    var totalprice :Float? = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,14 @@ class Order_Detail: GenericMethods(){
 
                     val item = p0.children.elementAt(0)
                     val orderitem = data.getValue(OrderModel::class.java)
+
+                    // Calculating total price of the item in the cart
+                    val num3 = orderitem?.cost?.replace("$", "")
+                    val num4 = num3!!.toFloat()
+
+                    totalprice = totalprice?.plus(num4)
+                    total_amount.text = "$"+totalprice.toString()
+
                     orderlist.add(orderitem!!)
                 }
 
