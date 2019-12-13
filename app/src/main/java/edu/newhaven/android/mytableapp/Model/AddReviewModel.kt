@@ -1,8 +1,15 @@
 package edu.newhaven.android.mytableapp.Model
 
-open class AddReviewModel(
+class AddReviewModel{
+    var reviewtext: String? = null
+    var reviewrating:Int = 0
 
-    var reviewtext: String = "",
-    var reviewrating: Int
+    constructor(){}
 
-)
+    constructor(reviewtext:String, reviewrating:Int){
+        this.reviewtext = reviewtext
+        this.reviewrating = reviewrating
+
+    }
+
+}

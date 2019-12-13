@@ -14,7 +14,6 @@
         android:elevation="4dp">
 
         <ImageView
-            android:id="@+id/restaurantImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:alpha="1.0"
@@ -47,39 +46,6 @@
             android:textStyle="bold"
             tools:text="Olive Garden" />
 
-
-        <TextView
-            android:id="@+id/restaurantCategory"
-            style="@style/AppTheme.Subheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/restaurantImage"
-            android:layout_alignLeft="@+id/restaurantName"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@android:color/white"
-            tools:text="Italian" />
-
-        <TextView
-            android:id="@+id/restaurantCity_divider"
-            style="@style/AppTheme.TextDivider"
-            android:layout_alignTop="@+id/restaurantCategory"
-            android:layout_toRightOf="@+id/restaurantCategory"
-            android:text="@string/divider_bullet"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/restaurantCity"
-            style="@style/AppTheme.Subheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/restaurantCategory"
-            android:layout_below="@+id/restaurantCategory"
-            android:layout_toRightOf="@+id/restaurantCity_divider"
-            android:textColor="@android:color/white"
-            tools:text="Orange, CT" />
-
-
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -94,18 +60,16 @@
         app:srcCompat="@drawable/ic_add_white_24px" />
 
     <!-- Ratings -->
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/recyclerRatings"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@+id/restaurant_top_card"-->
-    <!--        android:background="@android:color/transparent"-->
-    <!--        android:clipToPadding="false"-->
-    <!--        android:paddingBottom="16dp"-->
-    <!--        android:paddingTop="28dp"-->
-    <!--        android:visibility="gone"-->
-    <!--        tools:listitem="@layout/item_rating" />-->
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restaurant_top_card"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:paddingTop="28dp"
+        tools:listitem="@layout/item_rating" />
 
 
 </RelativeLayout>
