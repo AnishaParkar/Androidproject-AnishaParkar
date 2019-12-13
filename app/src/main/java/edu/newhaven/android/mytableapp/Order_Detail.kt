@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdRequest
@@ -24,6 +25,8 @@ import edu.newhaven.android.mytableappv1.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_order__detail.*
 import kotlinx.android.synthetic.main.activity_order__detail.adView
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 class Order_Detail: GenericMethods(), OnMapReadyCallback {
 
@@ -81,7 +84,12 @@ class Order_Detail: GenericMethods(), OnMapReadyCallback {
 
         MobileAds.initialize(this, "ca-app-pub-3940256099942544/6300978111")
         adView.loadAd(AdRequest.Builder().build())
+
+        orderplaced.onClick {
+            Toast.makeText(baseContext, "Your Order is placed", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
@@ -90,5 +98,7 @@ class Order_Detail: GenericMethods(), OnMapReadyCallback {
         map.addMarker(MarkerOptions().position(sydney).title("Olive Garden"))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, zoomLevel))
     }
+
+
 }
 
